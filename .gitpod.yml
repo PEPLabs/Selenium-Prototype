@@ -7,13 +7,11 @@
 #  file: .gitpod.Dockerfile
 tasks:
   - name: Chrome
-    before: wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/114.0.5735.90/linux64/chrome-linux64.zip
-    init: unzip ./chrome-linux64.zip -d ./chrome
-    command: export PATH=$PATH:$(readlink -f ./chrome)
-  - name: Selenium
-    before: wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
-    init: unzip ./chromedriver_linux64.zip -d ./chromedriver
-    command: export PATH=$PATH:$(readlink -f ./chromedriver)
-
-
+    before: sudo apt update
+    init: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    command: sudo apt install ./google-chrome-stable_current_amd64.deb -y
+  - name: SeleniumDriver
+    before: wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE
+    init: wget https://chromedriver.storage.googleapis.com/$(cat LATEST_RELEASE)/chromedriver_linux64.zip
+    command: unzip ./chromedriver_linux64.zip -d ./driver
 

@@ -17,14 +17,16 @@ public class SeleniumTest {
     @Before
     public void setUp() {
         // Set up ChromeDriver path
-        System.setProperty("webdriver.chrome.driver", "./chrome-driver/chromedriver");//linux_64
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");//linux_64
 
         // Get file
         File file = new File("index.html");
         String path = "file://" + file.getAbsolutePath();
+        //File chromeBinary = new File("./chrome/chrome");
 
         // Create a new ChromeDriver instance
         ChromeOptions options = new ChromeOptions();
+        //options.setBinary("./chrome/chrome-linux64/chrome");
         options.addArguments("headless");
         webDriver = new ChromeDriver(options);
 
