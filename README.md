@@ -30,7 +30,11 @@ System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
 ```
 This is the correct property for the location the `.gitpod.yml` places the driver.  
 
-Another pitfall: Selenium is picky about the name. We must prepend the absolute path with `"file://"`.  
+Another pitfall: Selenium is picky about the name. We must prepend the absolute path with `"file://"`:
+```java
+File file = new File("index.html");
+String path = "file://" + file.getAbsolutePath();
+```
 
 Lastly, we need to run it in headless mode. This is done by giving Selenium the `"headless"` argument:
 ```java
