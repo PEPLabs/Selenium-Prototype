@@ -1,2 +1,2 @@
-FROM selenium/standalone-chrome:latest
+FROM scratch
 CMD ["mvn test"]
