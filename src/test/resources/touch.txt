@@ -1,0 +1,1 @@
+this file is here to get the directory tracked. Not sure why the environment wants to see a test/resources/ directory
