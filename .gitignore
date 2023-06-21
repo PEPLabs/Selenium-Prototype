@@ -130,7 +130,8 @@ dist
 .pnp.*
 
 
-./chromedriver*
+*chromedriver*
+driver/
 target/
 .idea/
 *.iml

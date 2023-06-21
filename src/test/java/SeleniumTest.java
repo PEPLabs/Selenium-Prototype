@@ -17,16 +17,20 @@ public class SeleniumTest {
     @Before
     public void setUp() {
         // Set up ChromeDriver path
-        //System.setProperty("webdriver.chrome.driver", "./chromedriver");//linux_64
-        //System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");//windows_64
+        System.setProperty("webdriver.chrome.driver", "./chrome-driver/chromedriver");//linux_64
+
+        // Get file
+        File file = new File("index.html");
+        String path = "file://" + file.getAbsolutePath();
 
         // Create a new ChromeDriver instance
-        ChromeOptions options = new ChromeOptions().setHeadless(true);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
         webDriver = new ChromeDriver(options);
-        File file = new File("./index.html");
+
 
         // Open the HTML file
-        webDriver.get(file.getAbsolutePath());
+        webDriver.get(path);
     }
 
     @After
@@ -38,6 +42,7 @@ public class SeleniumTest {
     @Test
     public void testPageText() throws InterruptedException {
         WebElement test = webDriver.findElement(By.id("test"));
+        System.out.println(test.getText());
         Assert.assertEquals("Test", test.getText());
         Thread.sleep(500);
     }
