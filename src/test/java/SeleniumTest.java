@@ -22,11 +22,9 @@ public class SeleniumTest {
         // Get file
         File file = new File("index.html");
         String path = "file://" + file.getAbsolutePath();
-        //File chromeBinary = new File("./chrome/chrome");
 
         // Create a new ChromeDriver instance
         ChromeOptions options = new ChromeOptions();
-        //options.setBinary("./chrome/chrome-linux64/chrome");
         options.addArguments("headless");
         webDriver = new ChromeDriver(options);
 
