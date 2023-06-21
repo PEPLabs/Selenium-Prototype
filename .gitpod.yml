@@ -1,4 +1,0 @@
-image: Dockerfile
-
-tasks:
-  - init: mvn test
