@@ -1,4 +1,0 @@
-image: dockerfilelowercase
-
-tasks:
-  - init: mvn test
