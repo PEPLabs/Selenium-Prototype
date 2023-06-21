@@ -1,0 +1,4 @@
+image: .gitpod.Dockerfile
+
+tasks:
+  - init: mvn test
