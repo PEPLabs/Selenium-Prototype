@@ -1,2 +1,2 @@
-FROM scratch
-CMD ["mvn test"]
+FROM gitpod/workspace-full-vnc:latest
+RUN mvn test
